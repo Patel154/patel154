@@ -1,4 +1,4 @@
-[Uploading README.md…]()
+[README (5).md](https://github.com/user-attachments/files/31805859/README.5.md)
 <!-- ================================================================= -->
 <!-- MONIL PATEL — GITHUB PROFILE README                               -->
 <!-- Repository: Monilpatel154/Monilpatel154                           -->
@@ -54,7 +54,51 @@ Currently focused on architecting resilient web platforms, high-performance mobi
 
 <div align="center">
 
-### 02. 🚀 FUTURE DEPLOYMENTS // ROADMAP
+### 02. 🛰️ DEPLOYED SYSTEMS // FEATURED PROJECTS
+
+<br/>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**🧬 Brain Tumor Classification**
+<br/>
+Deep-learning image classifier built on **EfficientNetB3**, achieving **99%+ accuracy** on Kaggle benchmark data. Explored TTA, MixUp/CutMix augmentation, ensembling, and cosine annealing to push performance further. Built with a 3-person team.
+
+`Python` `TensorFlow/Keras` `EfficientNetB3` `Computer Vision`
+
+<!-- <a href="LINK_TO_REPO"><img src="https://img.shields.io/badge/View_Repo-161B22?style=flat-square&logo=github&logoColor=39D353" /></a> -->
+
+</td>
+<td width="50%" valign="top">
+
+**🚀 [Your Next Project Here]**
+<br/>
+One or two lines on the problem it solves, the stack, and a concrete result — a number, a benchmark, a user count. Recruiters skim for proof, not adjectives.
+
+`Stack` `Goes` `Here`
+
+<!-- <a href="LINK_TO_REPO"><img src="https://img.shields.io/badge/View_Repo-161B22?style=flat-square&logo=github&logoColor=39D353" /></a> -->
+
+</td>
+</tr>
+</table>
+
+*💡 Pin these same repos on your profile (top of your GitHub page) so this section and your pinned cards reinforce each other.*
+
+</div>
+
+<br/>
+
+<!-- Animated Gradient Divider -->
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+### 03. 🚀 FUTURE DEPLOYMENTS // ROADMAP
 
 *High-priority engineering milestones and architectures currently compiling on my horizon:*
 
@@ -78,7 +122,7 @@ Currently focused on architecting resilient web platforms, high-performance mobi
 
 <div align="center">
 
-### 03. ⚙️ PRODUCTION ARSENAL // TECH STACK
+### 04. ⚙️ PRODUCTION ARSENAL // TECH STACK
 
 <br/>
 
@@ -167,7 +211,7 @@ Currently focused on architecting resilient web platforms, high-performance mobi
 
 <div align="center">
 
-### 04. 📡 SATELLITE UPLINK // TRANSMISSION
+### 05. 📡 SATELLITE UPLINK // TRANSMISSION
 
 <br/>
 
@@ -198,11 +242,17 @@ Currently focused on architecting resilient web platforms, high-performance mobi
 
 <div align="center">
 
-### 05. 📈 TELEMETRY // GIT PULSE
+### 06. 📈 TELEMETRY // GIT PULSE
 
 <br/>
 
-<!-- GitHub Streak Stats (Matches Reference Divy Kairoth Layout with 100% Uptime) -->
+<!-- GitHub Stats + Top Languages -->
+<img src="https://github-readme-stats.vercel.app/api?username=Monilpatel154&show_icons=true&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&icon_color=39D353&text_color=8B949E&hide_border=false" alt="Monil's GitHub Stats" width="48%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Monilpatel154&layout=compact&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&text_color=8B949E&hide_border=false" alt="Top Languages" width="38%" />
+
+<br/><br/>
+
+<!-- GitHub Streak Stats -->
 <a href="https://github.com/Monilpatel154">
   <img src="https://streak-stats.demolab.com/?user=Monilpatel154&theme=dark&background=0D1117&border=30363D&stroke=39D353&ring=39D353&fire=39D353&currStreakLabel=39D353&sideLabels=8B949E&dates=8B949E" alt="Monil's GitHub Streak" width="80%" />
 </a>
