@@ -30,8 +30,6 @@
 
 ### 01. 🧠 THE ARCHITECTURE // WHOAMI
 
-</div>
-
 I'm a full-stack developer and Computer Science Engineering student passionate about turning complex ideas into scalable, production-ready software.
 I work across JavaScript, TypeScript, Python, Kotlin, React, Next.js, Android MVVM, and modern cloud technologies.
 Currently focused on architecting resilient web platforms, high-performance mobile apps, and edge IoT systems.
@@ -43,6 +41,8 @@ Currently focused on architecting resilient web platforms, high-performance mobi
   - **Web Development Intern** @ **RTsense** (4 Months) — Production-level bug resolution & dashboard UI performance optimization
 - 🔭 **Current Focus:** Scalable web platforms, Android MVVM architecture, and Generative AI integration (Google Gemini API)
 - 🤝 **Collaboration Vector:** Open to Software Engineering internships, high-impact open-source builds, and technical discussions
+
+</div>
 
 <br/>
 
