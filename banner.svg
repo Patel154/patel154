@@ -1,19 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 175" width="100%" height="175">
   <defs>
     <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feGaussianBlur stdDeviation="3" result="b"/>
       <feColorMatrix in="b" type="matrix" values="0 0 0 0 0.22  0 0 0 0 0.83  0 0 0 0 0.33  0 0 0 1 0" result="green"/>
       <feMerge>
         <feMergeNode in="green"/>
         <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="bigGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feColorMatrix in="b" type="matrix" values="0 0 0 0 0.22  0 0 0 0 0.83  0 0 0 0 0.33  0 0 0 0.7 0" result="green"/>
-      <feMerge>
-        <feMergeNode in="green"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -22,477 +14,472 @@
       <stop offset="50%" stop-color="#0d1117"/>
       <stop offset="100%" stop-color="#060a0e"/>
     </linearGradient>
-    <!-- Scanning light beam that sweeps across -->
     <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#39d353" stop-opacity="0"/>
       <stop offset="40%" stop-color="#39d353" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#7ee787" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#7ee787" stop-opacity="0.35"/>
       <stop offset="60%" stop-color="#39d353" stop-opacity="0"/>
       <stop offset="100%" stop-color="#39d353" stop-opacity="0"/>
-      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="2 0" dur="3.5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="2 0" dur="3s" repeatCount="indefinite"/>
     </linearGradient>
   </defs>
   <style>
-    @keyframes flicker {
-      0%   { opacity:0.55; fill:#1a7f37; }
-      15%  { opacity:0.9;  fill:#2ea043; }
-      40%  { opacity:1;    fill:#56d364; }
-      60%  { opacity:1;    fill:#39d353; }
-      85%  { opacity:0.9;  fill:#2ea043; }
-      100% { opacity:0.55; fill:#1a7f37; }
+    @keyframes ledFlicker {
+      0%, 100% { opacity: 0.7; fill: #238636; }
+      50%      { opacity: 1;   fill: #39d353; filter: drop-shadow(0 0 6px #39d353); }
     }
     @keyframes popIn {
-      0%   { transform: scale(0); opacity:0; }
-      60%  { transform: scale(1.15); opacity:1; }
-      80%  { transform: scale(0.95); }
-      100% { transform: scale(1); opacity:1; }
+      0%   { transform: scale(0.2); opacity: 0; }
+      70%  { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
     }
-    @keyframes subtitleSlide {
-      0%   { opacity:0; transform: translateY(8px); }
-      100% { opacity:1; transform: translateY(0); }
+    @keyframes subtitleFade {
+      0%   { opacity: 0; }
+      100% { opacity: 1; }
     }
     .sub {
-      animation: subtitleSlide 1s ease-out 2.5s both;
+      animation: subtitleFade 1.2s ease-out 1.2s both;
     }
   </style>
 
-  <rect width="860" height="175" rx="10" fill="url(#bg)" stroke="#21262d" stroke-width="1"/>
+  <!-- Dark Card Container -->
+  <rect width="860" height="175" rx="12" fill="url(#bg)" stroke="#30363d" stroke-width="1.2"/>
 
-  <!-- Scanning light overlay across the grid area -->
-  <rect x="65" y="35" width="729" height="81" rx="4" fill="url(#scan)" opacity="1"/>
+  <!-- Scanning Light Sweep -->
+  <rect x="65" y="35" width="729" height="81" rx="6" fill="url(#scan)"/>
 
-  <rect x="65" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="65" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="65" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="65" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="65" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="65" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:69px 99px; animation: popIn 0.4s ease-out 0.0s both, flicker 2.8s ease-in-out 0.0s infinite;"/>
-  <rect x="65" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="77" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="89" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="101" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:105px 39px; animation: popIn 0.4s ease-out 0.012s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:153px 39px; animation: popIn 0.4s ease-out 0.024s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:105px 51px; animation: popIn 0.4s ease-out 0.036s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:117px 51px; animation: popIn 0.4s ease-out 0.048s both, flicker 2.8s ease-in-out 0.18s infinite;"/>
-  <rect x="125" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:141px 51px; animation: popIn 0.4s ease-out 0.06s both, flicker 2.8s ease-in-out 0.28s infinite;"/>
-  <rect x="149" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:153px 51px; animation: popIn 0.4s ease-out 0.072s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:105px 63px; animation: popIn 0.4s ease-out 0.084s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:129px 63px; animation: popIn 0.4s ease-out 0.096s both, flicker 2.8s ease-in-out 0.23s infinite;"/>
-  <rect x="137" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:153px 63px; animation: popIn 0.4s ease-out 0.108s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:105px 75px; animation: popIn 0.4s ease-out 0.12s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:153px 75px; animation: popIn 0.4s ease-out 0.132s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:105px 87px; animation: popIn 0.4s ease-out 0.144s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:153px 87px; animation: popIn 0.4s ease-out 0.156s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:105px 99px; animation: popIn 0.4s ease-out 0.168s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:153px 99px; animation: popIn 0.4s ease-out 0.18s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="101" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:105px 111px; animation: popIn 0.4s ease-out 0.192s both, flicker 2.8s ease-in-out 0.14s infinite;"/>
-  <rect x="113" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="125" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="137" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="149" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:153px 111px; animation: popIn 0.4s ease-out 0.204s both, flicker 2.8s ease-in-out 0.32s infinite;"/>
-  <rect x="161" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="161" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="173" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="185" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:189px 39px; animation: popIn 0.4s ease-out 0.216s both, flicker 2.8s ease-in-out 0.46s infinite;"/>
-  <rect x="197" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:201px 39px; animation: popIn 0.4s ease-out 0.228s both, flicker 2.8s ease-in-out 0.5s infinite;"/>
-  <rect x="209" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:213px 39px; animation: popIn 0.4s ease-out 0.24s both, flicker 2.8s ease-in-out 0.55s infinite;"/>
-  <rect x="221" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="173" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:177px 51px; animation: popIn 0.4s ease-out 0.252s both, flicker 2.8s ease-in-out 0.41s infinite;"/>
-  <rect x="185" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="197" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="209" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="221" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:225px 51px; animation: popIn 0.4s ease-out 0.264s both, flicker 2.8s ease-in-out 0.6s infinite;"/>
-  <rect x="173" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:177px 63px; animation: popIn 0.4s ease-out 0.276s both, flicker 2.8s ease-in-out 0.41s infinite;"/>
-  <rect x="185" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="197" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="209" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="221" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:225px 63px; animation: popIn 0.4s ease-out 0.288s both, flicker 2.8s ease-in-out 0.6s infinite;"/>
-  <rect x="173" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:177px 75px; animation: popIn 0.4s ease-out 0.3s both, flicker 2.8s ease-in-out 0.41s infinite;"/>
-  <rect x="185" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="197" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="209" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="221" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:225px 75px; animation: popIn 0.4s ease-out 0.312s both, flicker 2.8s ease-in-out 0.6s infinite;"/>
-  <rect x="173" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:177px 87px; animation: popIn 0.4s ease-out 0.324s both, flicker 2.8s ease-in-out 0.41s infinite;"/>
-  <rect x="185" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="197" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="209" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="221" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:225px 87px; animation: popIn 0.4s ease-out 0.336s both, flicker 2.8s ease-in-out 0.6s infinite;"/>
-  <rect x="173" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:177px 99px; animation: popIn 0.4s ease-out 0.348s both, flicker 2.8s ease-in-out 0.41s infinite;"/>
-  <rect x="185" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="197" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="209" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="221" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:225px 99px; animation: popIn 0.4s ease-out 0.36s both, flicker 2.8s ease-in-out 0.6s infinite;"/>
-  <rect x="173" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="185" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:189px 111px; animation: popIn 0.4s ease-out 0.372s both, flicker 2.8s ease-in-out 0.46s infinite;"/>
-  <rect x="197" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:201px 111px; animation: popIn 0.4s ease-out 0.384s both, flicker 2.8s ease-in-out 0.5s infinite;"/>
-  <rect x="209" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:213px 111px; animation: popIn 0.4s ease-out 0.396s both, flicker 2.8s ease-in-out 0.55s infinite;"/>
-  <rect x="221" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="233" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="233" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="245" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:249px 39px; animation: popIn 0.4s ease-out 0.408s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:297px 39px; animation: popIn 0.4s ease-out 0.42s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:249px 51px; animation: popIn 0.4s ease-out 0.432s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:261px 51px; animation: popIn 0.4s ease-out 0.444s both, flicker 2.8s ease-in-out 0.73s infinite;"/>
-  <rect x="269" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:297px 51px; animation: popIn 0.4s ease-out 0.456s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:249px 63px; animation: popIn 0.4s ease-out 0.468s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:273px 63px; animation: popIn 0.4s ease-out 0.48s both, flicker 2.8s ease-in-out 0.78s infinite;"/>
-  <rect x="281" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:297px 63px; animation: popIn 0.4s ease-out 0.492s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:249px 75px; animation: popIn 0.4s ease-out 0.504s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:285px 75px; animation: popIn 0.4s ease-out 0.516s both, flicker 2.8s ease-in-out 0.83s infinite;"/>
-  <rect x="293" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:297px 75px; animation: popIn 0.4s ease-out 0.528s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:249px 87px; animation: popIn 0.4s ease-out 0.54s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:297px 87px; animation: popIn 0.4s ease-out 0.552s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:249px 99px; animation: popIn 0.4s ease-out 0.564s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:297px 99px; animation: popIn 0.4s ease-out 0.576s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="245" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:249px 111px; animation: popIn 0.4s ease-out 0.588s both, flicker 2.8s ease-in-out 0.69s infinite;"/>
-  <rect x="257" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="269" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="281" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="293" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:297px 111px; animation: popIn 0.4s ease-out 0.6s both, flicker 2.8s ease-in-out 0.87s infinite;"/>
-  <rect x="305" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="305" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="317" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:321px 39px; animation: popIn 0.4s ease-out 0.612s both, flicker 2.8s ease-in-out 0.96s infinite;"/>
-  <rect x="329" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:333px 39px; animation: popIn 0.4s ease-out 0.624s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:345px 39px; animation: popIn 0.4s ease-out 0.636s both, flicker 2.8s ease-in-out 1.06s infinite;"/>
-  <rect x="317" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="329" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:333px 51px; animation: popIn 0.4s ease-out 0.648s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="317" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="329" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:333px 63px; animation: popIn 0.4s ease-out 0.66s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="317" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="329" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:333px 75px; animation: popIn 0.4s ease-out 0.672s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="317" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="329" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:333px 87px; animation: popIn 0.4s ease-out 0.684s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="317" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="329" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:333px 99px; animation: popIn 0.4s ease-out 0.696s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="317" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:321px 111px; animation: popIn 0.4s ease-out 0.708s both, flicker 2.8s ease-in-out 0.96s infinite;"/>
-  <rect x="329" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:333px 111px; animation: popIn 0.4s ease-out 0.72s both, flicker 2.8s ease-in-out 1.01s infinite;"/>
-  <rect x="341" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:345px 111px; animation: popIn 0.4s ease-out 0.732s both, flicker 2.8s ease-in-out 1.06s infinite;"/>
-  <rect x="353" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="353" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="365" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:369px 39px; animation: popIn 0.4s ease-out 0.744s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:369px 51px; animation: popIn 0.4s ease-out 0.756s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:369px 63px; animation: popIn 0.4s ease-out 0.768s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:369px 75px; animation: popIn 0.4s ease-out 0.78s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:369px 87px; animation: popIn 0.4s ease-out 0.792s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:369px 99px; animation: popIn 0.4s ease-out 0.804s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="389" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="401" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="365" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:369px 111px; animation: popIn 0.4s ease-out 0.816s both, flicker 2.8s ease-in-out 1.15s infinite;"/>
-  <rect x="377" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:381px 111px; animation: popIn 0.4s ease-out 0.828s both, flicker 2.8s ease-in-out 1.19s infinite;"/>
-  <rect x="389" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:393px 111px; animation: popIn 0.4s ease-out 0.84s both, flicker 2.8s ease-in-out 1.24s infinite;"/>
-  <rect x="401" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:405px 111px; animation: popIn 0.4s ease-out 0.852s both, flicker 2.8s ease-in-out 1.29s infinite;"/>
-  <rect x="413" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="413" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="425" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="437" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:441px 39px; animation: popIn 0.4s ease-out 0.864s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:453px 39px; animation: popIn 0.4s ease-out 0.876s both, flicker 2.8s ease-in-out 1.47s infinite;"/>
-  <rect x="461" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:465px 39px; animation: popIn 0.4s ease-out 0.888s both, flicker 2.8s ease-in-out 1.51s infinite;"/>
-  <rect x="473" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:477px 39px; animation: popIn 0.4s ease-out 0.9s both, flicker 2.8s ease-in-out 1.56s infinite;"/>
-  <rect x="485" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="437" y="47" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:441px 51px; animation: popIn 0.4s ease-out 0.912s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="461" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="473" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="485" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:489px 51px; animation: popIn 0.4s ease-out 0.924s both, flicker 2.8s ease-in-out 1.61s infinite;"/>
-  <rect x="437" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:441px 63px; animation: popIn 0.4s ease-out 0.936s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="461" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="473" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="485" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:489px 63px; animation: popIn 0.4s ease-out 0.948s both, flicker 2.8s ease-in-out 1.61s infinite;"/>
-  <rect x="437" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:441px 75px; animation: popIn 0.4s ease-out 0.96s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:453px 75px; animation: popIn 0.4s ease-out 0.972s both, flicker 2.8s ease-in-out 1.47s infinite;"/>
-  <rect x="461" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:465px 75px; animation: popIn 0.4s ease-out 0.984s both, flicker 2.8s ease-in-out 1.51s infinite;"/>
-  <rect x="473" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:477px 75px; animation: popIn 0.4s ease-out 0.996s both, flicker 2.8s ease-in-out 1.56s infinite;"/>
-  <rect x="485" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="437" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:441px 87px; animation: popIn 0.4s ease-out 1.008s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="461" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="473" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="485" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="437" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:441px 99px; animation: popIn 0.4s ease-out 1.02s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="461" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="473" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="485" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="437" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:441px 111px; animation: popIn 0.4s ease-out 1.032s both, flicker 2.8s ease-in-out 1.42s infinite;"/>
-  <rect x="449" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="461" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="473" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="485" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="497" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="497" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="509" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="521" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:525px 39px; animation: popIn 0.4s ease-out 1.044s both, flicker 2.8s ease-in-out 1.74s infinite;"/>
-  <rect x="533" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:537px 39px; animation: popIn 0.4s ease-out 1.056s both, flicker 2.8s ease-in-out 1.79s infinite;"/>
-  <rect x="545" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:549px 39px; animation: popIn 0.4s ease-out 1.068s both, flicker 2.8s ease-in-out 1.84s infinite;"/>
-  <rect x="557" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="509" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:513px 51px; animation: popIn 0.4s ease-out 1.08s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="533" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="545" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="557" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:561px 51px; animation: popIn 0.4s ease-out 1.092s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="509" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:513px 63px; animation: popIn 0.4s ease-out 1.104s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="533" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="545" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="557" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:561px 63px; animation: popIn 0.4s ease-out 1.116s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="509" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:513px 75px; animation: popIn 0.4s ease-out 1.128s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:525px 75px; animation: popIn 0.4s ease-out 1.14s both, flicker 2.8s ease-in-out 1.74s infinite;"/>
-  <rect x="533" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:537px 75px; animation: popIn 0.4s ease-out 1.152s both, flicker 2.8s ease-in-out 1.79s infinite;"/>
-  <rect x="545" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:549px 75px; animation: popIn 0.4s ease-out 1.164s both, flicker 2.8s ease-in-out 1.84s infinite;"/>
-  <rect x="557" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:561px 75px; animation: popIn 0.4s ease-out 1.176s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="509" y="83" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:513px 87px; animation: popIn 0.4s ease-out 1.188s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="533" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="545" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="557" y="83" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:561px 87px; animation: popIn 0.4s ease-out 1.2s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="509" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:513px 99px; animation: popIn 0.4s ease-out 1.212s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="533" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="545" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="557" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:561px 99px; animation: popIn 0.4s ease-out 1.224s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="509" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:513px 111px; animation: popIn 0.4s ease-out 1.236s both, flicker 2.8s ease-in-out 1.7s infinite;"/>
-  <rect x="521" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="533" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="545" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="557" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:561px 111px; animation: popIn 0.4s ease-out 1.248s both, flicker 2.8s ease-in-out 1.88s infinite;"/>
-  <rect x="569" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="569" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="581" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:585px 39px; animation: popIn 0.4s ease-out 1.26s both, flicker 2.8s ease-in-out 1.97s infinite;"/>
-  <rect x="593" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:597px 39px; animation: popIn 0.4s ease-out 1.272s both, flicker 2.8s ease-in-out 2.02s infinite;"/>
-  <rect x="605" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:609px 39px; animation: popIn 0.4s ease-out 1.284s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:621px 39px; animation: popIn 0.4s ease-out 1.296s both, flicker 2.8s ease-in-out 2.11s infinite;"/>
-  <rect x="629" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:633px 39px; animation: popIn 0.4s ease-out 1.308s both, flicker 2.8s ease-in-out 2.16s infinite;"/>
-  <rect x="581" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:609px 51px; animation: popIn 0.4s ease-out 1.32s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="581" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:609px 63px; animation: popIn 0.4s ease-out 1.332s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="581" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:609px 75px; animation: popIn 0.4s ease-out 1.344s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="581" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:609px 87px; animation: popIn 0.4s ease-out 1.356s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="581" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:609px 99px; animation: popIn 0.4s ease-out 1.368s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="581" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="593" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="605" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:609px 111px; animation: popIn 0.4s ease-out 1.38s both, flicker 2.8s ease-in-out 2.07s infinite;"/>
-  <rect x="617" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="629" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="641" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="641" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="653" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:657px 39px; animation: popIn 0.4s ease-out 1.392s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:669px 39px; animation: popIn 0.4s ease-out 1.404s both, flicker 2.8s ease-in-out 2.3s infinite;"/>
-  <rect x="677" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:681px 39px; animation: popIn 0.4s ease-out 1.416s both, flicker 2.8s ease-in-out 2.34s infinite;"/>
-  <rect x="689" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:693px 39px; animation: popIn 0.4s ease-out 1.428s both, flicker 2.8s ease-in-out 2.39s infinite;"/>
-  <rect x="653" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:657px 51px; animation: popIn 0.4s ease-out 1.44s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="677" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="689" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="653" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:657px 63px; animation: popIn 0.4s ease-out 1.452s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="677" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="689" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="653" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:657px 75px; animation: popIn 0.4s ease-out 1.464s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:669px 75px; animation: popIn 0.4s ease-out 1.476s both, flicker 2.8s ease-in-out 2.3s infinite;"/>
-  <rect x="677" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:681px 75px; animation: popIn 0.4s ease-out 1.488s both, flicker 2.8s ease-in-out 2.34s infinite;"/>
-  <rect x="689" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="653" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:657px 87px; animation: popIn 0.4s ease-out 1.5s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="677" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="689" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="653" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:657px 99px; animation: popIn 0.4s ease-out 1.512s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="677" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="689" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="653" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:657px 111px; animation: popIn 0.4s ease-out 1.524s both, flicker 2.8s ease-in-out 2.25s infinite;"/>
-  <rect x="665" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:669px 111px; animation: popIn 0.4s ease-out 1.536s both, flicker 2.8s ease-in-out 2.3s infinite;"/>
-  <rect x="677" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:681px 111px; animation: popIn 0.4s ease-out 1.548s both, flicker 2.8s ease-in-out 2.34s infinite;"/>
-  <rect x="689" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:693px 111px; animation: popIn 0.4s ease-out 1.56s both, flicker 2.8s ease-in-out 2.39s infinite;"/>
-  <rect x="701" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="701" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.12"/>
-  <rect x="713" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:717px 39px; animation: popIn 0.4s ease-out 1.572s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:717px 51px; animation: popIn 0.4s ease-out 1.584s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:717px 63px; animation: popIn 0.4s ease-out 1.596s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin:717px 75px; animation: popIn 0.4s ease-out 1.608s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:717px 87px; animation: popIn 0.4s ease-out 1.62s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:717px 99px; animation: popIn 0.4s ease-out 1.632s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="737" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="749" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="713" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:717px 111px; animation: popIn 0.4s ease-out 1.644s both, flicker 2.8s ease-in-out 2.48s infinite;"/>
-  <rect x="725" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:729px 111px; animation: popIn 0.4s ease-out 1.656s both, flicker 2.8s ease-in-out 2.52s infinite;"/>
-  <rect x="737" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin:741px 111px; animation: popIn 0.4s ease-out 1.668s both, flicker 2.8s ease-in-out 2.57s infinite;"/>
-  <rect x="749" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin:753px 111px; animation: popIn 0.4s ease-out 1.68s both, flicker 2.8s ease-in-out 2.62s infinite;"/>
-  <rect x="761" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="761" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="773" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
-  <rect x="785" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin:789px 99px; animation: popIn 0.4s ease-out 1.692s both, flicker 2.8s ease-in-out 2.75s infinite;"/>
-  <rect x="785" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.2"/>
+  <rect x="65" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="65" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="65" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="65" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="65" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="65" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 69px 99px; animation: popIn 0.35s ease-out 0.0s both, ledFlicker 2.2s ease-in-out 0.0s infinite;"/>
+  <rect x="65" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="77" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="89" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="101" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 105px 39px; animation: popIn 0.35s ease-out 0.015s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 153px 39px; animation: popIn 0.35s ease-out 0.03s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 105px 51px; animation: popIn 0.35s ease-out 0.045s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 117px 51px; animation: popIn 0.35s ease-out 0.06s both, ledFlicker 2.2s ease-in-out 0.16s infinite;"/>
+  <rect x="125" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 141px 51px; animation: popIn 0.35s ease-out 0.075s both, ledFlicker 2.2s ease-in-out 0.25s infinite;"/>
+  <rect x="149" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 153px 51px; animation: popIn 0.35s ease-out 0.09s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 105px 63px; animation: popIn 0.35s ease-out 0.105s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 129px 63px; animation: popIn 0.35s ease-out 0.12s both, ledFlicker 2.2s ease-in-out 0.2s infinite;"/>
+  <rect x="137" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 153px 63px; animation: popIn 0.35s ease-out 0.135s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 105px 75px; animation: popIn 0.35s ease-out 0.15s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 153px 75px; animation: popIn 0.35s ease-out 0.165s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 105px 87px; animation: popIn 0.35s ease-out 0.18s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 153px 87px; animation: popIn 0.35s ease-out 0.195s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 105px 99px; animation: popIn 0.35s ease-out 0.21s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 153px 99px; animation: popIn 0.35s ease-out 0.225s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="101" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 105px 111px; animation: popIn 0.35s ease-out 0.24s both, ledFlicker 2.2s ease-in-out 0.12s infinite;"/>
+  <rect x="113" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="125" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="137" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="149" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 153px 111px; animation: popIn 0.35s ease-out 0.255s both, ledFlicker 2.2s ease-in-out 0.29s infinite;"/>
+  <rect x="161" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="161" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="173" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="185" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 189px 39px; animation: popIn 0.35s ease-out 0.27s both, ledFlicker 2.2s ease-in-out 0.41s infinite;"/>
+  <rect x="197" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 201px 39px; animation: popIn 0.35s ease-out 0.285s both, ledFlicker 2.2s ease-in-out 0.45s infinite;"/>
+  <rect x="209" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 213px 39px; animation: popIn 0.35s ease-out 0.3s both, ledFlicker 2.2s ease-in-out 0.49s infinite;"/>
+  <rect x="221" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="173" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 177px 51px; animation: popIn 0.35s ease-out 0.315s both, ledFlicker 2.2s ease-in-out 0.37s infinite;"/>
+  <rect x="185" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="197" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="209" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="221" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 225px 51px; animation: popIn 0.35s ease-out 0.33s both, ledFlicker 2.2s ease-in-out 0.53s infinite;"/>
+  <rect x="173" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 177px 63px; animation: popIn 0.35s ease-out 0.345s both, ledFlicker 2.2s ease-in-out 0.37s infinite;"/>
+  <rect x="185" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="197" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="209" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="221" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 225px 63px; animation: popIn 0.35s ease-out 0.36s both, ledFlicker 2.2s ease-in-out 0.53s infinite;"/>
+  <rect x="173" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 177px 75px; animation: popIn 0.35s ease-out 0.375s both, ledFlicker 2.2s ease-in-out 0.37s infinite;"/>
+  <rect x="185" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="197" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="209" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="221" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 225px 75px; animation: popIn 0.35s ease-out 0.39s both, ledFlicker 2.2s ease-in-out 0.53s infinite;"/>
+  <rect x="173" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 177px 87px; animation: popIn 0.35s ease-out 0.405s both, ledFlicker 2.2s ease-in-out 0.37s infinite;"/>
+  <rect x="185" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="197" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="209" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="221" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 225px 87px; animation: popIn 0.35s ease-out 0.42s both, ledFlicker 2.2s ease-in-out 0.53s infinite;"/>
+  <rect x="173" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 177px 99px; animation: popIn 0.35s ease-out 0.435s both, ledFlicker 2.2s ease-in-out 0.37s infinite;"/>
+  <rect x="185" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="197" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="209" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="221" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 225px 99px; animation: popIn 0.35s ease-out 0.45s both, ledFlicker 2.2s ease-in-out 0.53s infinite;"/>
+  <rect x="173" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="185" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 189px 111px; animation: popIn 0.35s ease-out 0.465s both, ledFlicker 2.2s ease-in-out 0.41s infinite;"/>
+  <rect x="197" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 201px 111px; animation: popIn 0.35s ease-out 0.48s both, ledFlicker 2.2s ease-in-out 0.45s infinite;"/>
+  <rect x="209" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 213px 111px; animation: popIn 0.35s ease-out 0.495s both, ledFlicker 2.2s ease-in-out 0.49s infinite;"/>
+  <rect x="221" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="233" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="233" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="245" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 249px 39px; animation: popIn 0.35s ease-out 0.51s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 297px 39px; animation: popIn 0.35s ease-out 0.525s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 249px 51px; animation: popIn 0.35s ease-out 0.54s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 261px 51px; animation: popIn 0.35s ease-out 0.555s both, ledFlicker 2.2s ease-in-out 0.66s infinite;"/>
+  <rect x="269" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 297px 51px; animation: popIn 0.35s ease-out 0.57s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 249px 63px; animation: popIn 0.35s ease-out 0.585s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 273px 63px; animation: popIn 0.35s ease-out 0.6s both, ledFlicker 2.2s ease-in-out 0.7s infinite;"/>
+  <rect x="281" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="59" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 297px 63px; animation: popIn 0.35s ease-out 0.615s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 249px 75px; animation: popIn 0.35s ease-out 0.63s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 297px 75px; animation: popIn 0.35s ease-out 0.645s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 249px 87px; animation: popIn 0.35s ease-out 0.66s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 297px 87px; animation: popIn 0.35s ease-out 0.675s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 249px 99px; animation: popIn 0.35s ease-out 0.69s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 297px 99px; animation: popIn 0.35s ease-out 0.705s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="245" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 249px 111px; animation: popIn 0.35s ease-out 0.72s both, ledFlicker 2.2s ease-in-out 0.61s infinite;"/>
+  <rect x="257" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="269" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="281" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="293" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 297px 111px; animation: popIn 0.35s ease-out 0.735s both, ledFlicker 2.2s ease-in-out 0.78s infinite;"/>
+  <rect x="305" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="305" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="317" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 321px 39px; animation: popIn 0.35s ease-out 0.75s both, ledFlicker 2.2s ease-in-out 0.86s infinite;"/>
+  <rect x="329" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 333px 39px; animation: popIn 0.35s ease-out 0.765s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 345px 39px; animation: popIn 0.35s ease-out 0.78s both, ledFlicker 2.2s ease-in-out 0.94s infinite;"/>
+  <rect x="317" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="329" y="47" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 333px 51px; animation: popIn 0.35s ease-out 0.795s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="317" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="329" y="59" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 333px 63px; animation: popIn 0.35s ease-out 0.81s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="317" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="329" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 333px 75px; animation: popIn 0.35s ease-out 0.825s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="317" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="329" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 333px 87px; animation: popIn 0.35s ease-out 0.84s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="317" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="329" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 333px 99px; animation: popIn 0.35s ease-out 0.855s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="317" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 321px 111px; animation: popIn 0.35s ease-out 0.87s both, ledFlicker 2.2s ease-in-out 0.86s infinite;"/>
+  <rect x="329" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 333px 111px; animation: popIn 0.35s ease-out 0.885s both, ledFlicker 2.2s ease-in-out 0.9s infinite;"/>
+  <rect x="341" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 345px 111px; animation: popIn 0.35s ease-out 0.9s both, ledFlicker 2.2s ease-in-out 0.94s infinite;"/>
+  <rect x="353" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="353" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="365" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 369px 39px; animation: popIn 0.35s ease-out 0.915s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 369px 51px; animation: popIn 0.35s ease-out 0.93s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 369px 63px; animation: popIn 0.35s ease-out 0.945s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 369px 75px; animation: popIn 0.35s ease-out 0.96s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="83" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 369px 87px; animation: popIn 0.35s ease-out 0.975s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 369px 99px; animation: popIn 0.35s ease-out 0.99s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="389" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="401" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="365" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 369px 111px; animation: popIn 0.35s ease-out 1.005s both, ledFlicker 2.2s ease-in-out 1.02s infinite;"/>
+  <rect x="377" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 381px 111px; animation: popIn 0.35s ease-out 1.02s both, ledFlicker 2.2s ease-in-out 1.07s infinite;"/>
+  <rect x="389" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 393px 111px; animation: popIn 0.35s ease-out 1.035s both, ledFlicker 2.2s ease-in-out 1.11s infinite;"/>
+  <rect x="401" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 405px 111px; animation: popIn 0.35s ease-out 1.05s both, ledFlicker 2.2s ease-in-out 1.15s infinite;"/>
+  <rect x="413" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="413" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="425" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="437" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 441px 39px; animation: popIn 0.35s ease-out 1.065s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 453px 39px; animation: popIn 0.35s ease-out 1.08s both, ledFlicker 2.2s ease-in-out 1.31s infinite;"/>
+  <rect x="461" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 465px 39px; animation: popIn 0.35s ease-out 1.095s both, ledFlicker 2.2s ease-in-out 1.35s infinite;"/>
+  <rect x="473" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 477px 39px; animation: popIn 0.35s ease-out 1.11s both, ledFlicker 2.2s ease-in-out 1.39s infinite;"/>
+  <rect x="485" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="437" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 441px 51px; animation: popIn 0.35s ease-out 1.125s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="461" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="473" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="485" y="47" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 489px 51px; animation: popIn 0.35s ease-out 1.14s both, ledFlicker 2.2s ease-in-out 1.43s infinite;"/>
+  <rect x="437" y="59" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 441px 63px; animation: popIn 0.35s ease-out 1.155s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="461" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="473" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="485" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 489px 63px; animation: popIn 0.35s ease-out 1.17s both, ledFlicker 2.2s ease-in-out 1.43s infinite;"/>
+  <rect x="437" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 441px 75px; animation: popIn 0.35s ease-out 1.185s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 453px 75px; animation: popIn 0.35s ease-out 1.2s both, ledFlicker 2.2s ease-in-out 1.31s infinite;"/>
+  <rect x="461" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 465px 75px; animation: popIn 0.35s ease-out 1.215s both, ledFlicker 2.2s ease-in-out 1.35s infinite;"/>
+  <rect x="473" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 477px 75px; animation: popIn 0.35s ease-out 1.23s both, ledFlicker 2.2s ease-in-out 1.39s infinite;"/>
+  <rect x="485" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="437" y="83" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 441px 87px; animation: popIn 0.35s ease-out 1.245s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="461" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="473" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="485" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="437" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 441px 99px; animation: popIn 0.35s ease-out 1.26s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="461" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="473" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="485" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="437" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 441px 111px; animation: popIn 0.35s ease-out 1.275s both, ledFlicker 2.2s ease-in-out 1.27s infinite;"/>
+  <rect x="449" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="461" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="473" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="485" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="497" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="497" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="509" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="521" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 525px 39px; animation: popIn 0.35s ease-out 1.29s both, ledFlicker 2.2s ease-in-out 1.56s infinite;"/>
+  <rect x="533" y="35" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 537px 39px; animation: popIn 0.35s ease-out 1.305s both, ledFlicker 2.2s ease-in-out 1.6s infinite;"/>
+  <rect x="545" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 549px 39px; animation: popIn 0.35s ease-out 1.32s both, ledFlicker 2.2s ease-in-out 1.64s infinite;"/>
+  <rect x="557" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="509" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 513px 51px; animation: popIn 0.35s ease-out 1.335s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="533" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="545" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="557" y="47" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 561px 51px; animation: popIn 0.35s ease-out 1.35s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="509" y="59" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 513px 63px; animation: popIn 0.35s ease-out 1.365s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="533" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="545" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="557" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 561px 63px; animation: popIn 0.35s ease-out 1.38s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="509" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 513px 75px; animation: popIn 0.35s ease-out 1.395s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 525px 75px; animation: popIn 0.35s ease-out 1.41s both, ledFlicker 2.2s ease-in-out 1.56s infinite;"/>
+  <rect x="533" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 537px 75px; animation: popIn 0.35s ease-out 1.425s both, ledFlicker 2.2s ease-in-out 1.6s infinite;"/>
+  <rect x="545" y="71" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 549px 75px; animation: popIn 0.35s ease-out 1.44s both, ledFlicker 2.2s ease-in-out 1.64s infinite;"/>
+  <rect x="557" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 561px 75px; animation: popIn 0.35s ease-out 1.455s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="509" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 513px 87px; animation: popIn 0.35s ease-out 1.47s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="533" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="545" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="557" y="83" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 561px 87px; animation: popIn 0.35s ease-out 1.485s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="509" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 513px 99px; animation: popIn 0.35s ease-out 1.5s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="533" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="545" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="557" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 561px 99px; animation: popIn 0.35s ease-out 1.515s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="509" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 513px 111px; animation: popIn 0.35s ease-out 1.53s both, ledFlicker 2.2s ease-in-out 1.52s infinite;"/>
+  <rect x="521" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="533" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="545" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="557" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 561px 111px; animation: popIn 0.35s ease-out 1.545s both, ledFlicker 2.2s ease-in-out 1.68s infinite;"/>
+  <rect x="569" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="569" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="581" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 585px 39px; animation: popIn 0.35s ease-out 1.56s both, ledFlicker 2.2s ease-in-out 1.76s infinite;"/>
+  <rect x="593" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 597px 39px; animation: popIn 0.35s ease-out 1.575s both, ledFlicker 2.2s ease-in-out 1.8s infinite;"/>
+  <rect x="605" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 609px 39px; animation: popIn 0.35s ease-out 1.59s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 621px 39px; animation: popIn 0.35s ease-out 1.605s both, ledFlicker 2.2s ease-in-out 1.89s infinite;"/>
+  <rect x="629" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 633px 39px; animation: popIn 0.35s ease-out 1.62s both, ledFlicker 2.2s ease-in-out 1.93s infinite;"/>
+  <rect x="581" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="47" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 609px 51px; animation: popIn 0.35s ease-out 1.635s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="581" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="59" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 609px 63px; animation: popIn 0.35s ease-out 1.65s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="581" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 609px 75px; animation: popIn 0.35s ease-out 1.665s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="581" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 609px 87px; animation: popIn 0.35s ease-out 1.68s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="581" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="95" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 609px 99px; animation: popIn 0.35s ease-out 1.695s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="581" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="593" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="605" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 609px 111px; animation: popIn 0.35s ease-out 1.71s both, ledFlicker 2.2s ease-in-out 1.84s infinite;"/>
+  <rect x="617" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="629" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="641" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="641" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="653" y="35" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 657px 39px; animation: popIn 0.35s ease-out 1.725s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="35" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 669px 39px; animation: popIn 0.35s ease-out 1.74s both, ledFlicker 2.2s ease-in-out 2.05s infinite;"/>
+  <rect x="677" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 681px 39px; animation: popIn 0.35s ease-out 1.755s both, ledFlicker 2.2s ease-in-out 2.09s infinite;"/>
+  <rect x="689" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 693px 39px; animation: popIn 0.35s ease-out 1.77s both, ledFlicker 2.2s ease-in-out 2.13s infinite;"/>
+  <rect x="653" y="47" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 657px 51px; animation: popIn 0.35s ease-out 1.785s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="677" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="689" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="653" y="59" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 657px 63px; animation: popIn 0.35s ease-out 1.8s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="677" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="689" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="653" y="71" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 657px 75px; animation: popIn 0.35s ease-out 1.815s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="71" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 669px 75px; animation: popIn 0.35s ease-out 1.83s both, ledFlicker 2.2s ease-in-out 2.05s infinite;"/>
+  <rect x="677" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 681px 75px; animation: popIn 0.35s ease-out 1.845s both, ledFlicker 2.2s ease-in-out 2.09s infinite;"/>
+  <rect x="689" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="653" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 657px 87px; animation: popIn 0.35s ease-out 1.86s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="677" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="689" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="653" y="95" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 657px 99px; animation: popIn 0.35s ease-out 1.875s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="677" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="689" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="653" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 657px 111px; animation: popIn 0.35s ease-out 1.89s both, ledFlicker 2.2s ease-in-out 2.01s infinite;"/>
+  <rect x="665" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 669px 111px; animation: popIn 0.35s ease-out 1.905s both, ledFlicker 2.2s ease-in-out 2.05s infinite;"/>
+  <rect x="677" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 681px 111px; animation: popIn 0.35s ease-out 1.92s both, ledFlicker 2.2s ease-in-out 2.09s infinite;"/>
+  <rect x="689" y="107" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 693px 111px; animation: popIn 0.35s ease-out 1.935s both, ledFlicker 2.2s ease-in-out 2.13s infinite;"/>
+  <rect x="701" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="701" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.15"/>
+  <rect x="713" y="35" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 717px 39px; animation: popIn 0.35s ease-out 1.95s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="47" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 717px 51px; animation: popIn 0.35s ease-out 1.965s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="59" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 717px 63px; animation: popIn 0.35s ease-out 1.98s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="71" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 717px 75px; animation: popIn 0.35s ease-out 1.995s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="83" width="9" height="9" rx="2" fill="#26a641" filter="url(#glow)" style="transform-origin: 717px 87px; animation: popIn 0.35s ease-out 2.01s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="95" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 717px 99px; animation: popIn 0.35s ease-out 2.025s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="737" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="749" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="713" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 717px 111px; animation: popIn 0.35s ease-out 2.04s both, ledFlicker 2.2s ease-in-out 2.21s infinite;"/>
+  <rect x="725" y="107" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 729px 111px; animation: popIn 0.35s ease-out 2.055s both, ledFlicker 2.2s ease-in-out 2.25s infinite;"/>
+  <rect x="737" y="107" width="9" height="9" rx="2" fill="#39d353" filter="url(#glow)" style="transform-origin: 741px 111px; animation: popIn 0.35s ease-out 2.07s both, ledFlicker 2.2s ease-in-out 2.3s infinite;"/>
+  <rect x="749" y="107" width="9" height="9" rx="2" fill="#2ea043" filter="url(#glow)" style="transform-origin: 753px 111px; animation: popIn 0.35s ease-out 2.085s both, ledFlicker 2.2s ease-in-out 2.34s infinite;"/>
+  <rect x="761" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="95" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="761" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="773" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="35" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="47" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="59" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="71" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="83" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
+  <rect x="785" y="95" width="9" height="9" rx="2" fill="#56d364" filter="url(#glow)" style="transform-origin: 789px 99px; animation: popIn 0.35s ease-out 2.1s both, ledFlicker 2.2s ease-in-out 2.46s infinite;"/>
+  <rect x="785" y="107" width="9" height="9" rx="2" fill="#161b22" opacity="0.25"/>
 
-  <!-- Subtitle with slide-in -->
+  <!-- Subtitle -->
   <text class="sub" x="430" y="150" text-anchor="middle"
         font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="13" font-weight="400" letter-spacing="3" fill="#8b949e">
-    SOFTWARE ENGINEER  |  FULL-STACK & ANDROID  |  AI & IOT
+        font-size="13" font-weight="500" letter-spacing="3" fill="#8b949e">
+    SOFTWARE ENGINEER  |  FULL-STACK &amp; ANDROID  |  AI &amp; IOT
   </text>
 </svg>
