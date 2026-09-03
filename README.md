@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/31803518/README.md)
+[Uploading README.md…]()
 <!-- ================================================================= -->
 <!-- MONIL PATEL — GITHUB PROFILE README                               -->
 <!-- Repository: Monilpatel154/Monilpatel154                           -->
@@ -6,8 +6,8 @@
 
 <div align="center">
 
-  <!-- 1. Neon Matrix Waving Banner (100% Guaranteed Uptime, Instant Render) -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:060a0e,50:0d1117,100:1a472a&height=190&section=header&text=.%20MONIL%20PATEL%20.&fontSize=52&fontColor=39d353&fontAlignY=45&desc=SOFTWARE%20ENGINEER%20%20%7C%20%20FULL-STACK%20%26amp%3B%20ANDROID%20%20%7C%20%20AI%20%26amp%3B%20IOT&descSize=15&descAlignY=70&descColor=8b949e" width="100%" alt="Monil Patel - Software Engineer" />
+  <!-- 1. Pixel Matrix Animated Banner (Green LED Dot Matrix) -->
+  <img src="./banner.svg" alt="Monil Patel - Software Engineer" width="100%" />
 
   <br/><br/>
 
