@@ -1,17 +1,17 @@
-[README.md](https://github.com/user-attachments/files/31803015/README.md)
+[README.md](https://github.com/user-attachments/files/31803518/README.md)
 <!-- ================================================================= -->
-<!-- MONIL PATEL - GITHUB PROFILE README                               -->
+<!-- MONIL PATEL — GITHUB PROFILE README                               -->
 <!-- Repository: Monilpatel154/Monilpatel154                           -->
 <!-- ================================================================= -->
 
 <div align="center">
 
-  <!-- 1. Pixel Matrix Animated Banner (Validated XML, Sweeping Light & LED Pulse) -->
-  <img src="./banner.svg" alt="Monil Patel - Software Engineer" width="100%" />
+  <!-- 1. Neon Matrix Waving Banner (100% Guaranteed Uptime, Instant Render) -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:060a0e,50:0d1117,100:1a472a&height=190&section=header&text=.%20MONIL%20PATEL%20.&fontSize=52&fontColor=39d353&fontAlignY=45&desc=SOFTWARE%20ENGINEER%20%20%7C%20%20FULL-STACK%20%26amp%3B%20ANDROID%20%20%7C%20%20AI%20%26amp%3B%20IOT&descSize=15&descAlignY=70&descColor=8b949e" width="100%" alt="Monil Patel - Software Engineer" />
 
   <br/><br/>
 
-  <!-- 2. Animated Typing Name Header -->
+  <!-- 2. Dynamic Typing SVG Header -->
   <a href="https://github.com/Monilpatel154">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&duration=2600&pause=1000&color=39D353&center=true&vCenter=true&width=550&lines=Hi+%F0%9F%91%8B%2C+I'm+Monil+Patel;Software+Engineer;Full-Stack+%26+Android+Dev;AI+%26+Distributed+IoT+Builder" alt="Hi, I'm Monil Patel" />
   </a>
@@ -29,25 +29,21 @@
 
 <div align="center">
 
-### 🧑‍💻 About Me
+### 01. 🧠 THE ARCHITECTURE // WHOAMI
 
 </div>
 
-I'm a full-stack developer and Computer Science Engineering student passionate about building products that solve real-world problems.
+I'm a full-stack developer and Computer Science Engineering student passionate about turning complex ideas into scalable, production-ready software.
 I work across JavaScript, TypeScript, Python, Kotlin, React, Next.js, Android MVVM, and modern cloud technologies.
-Currently focused on architecting scalable web platforms, high-performance mobile apps, and edge IoT devices.
+Currently focused on architecting resilient web platforms, high-performance mobile apps, and edge IoT systems.
 
-- 🎓 **Education:** Pursuing **B.Tech in Computer Science Engineering** @ **Jain University, Bengaluru** (Expected 2028) · **Diploma in ICT** @ **Marwadi University** (CGPA: 8.42/10)
-- 💼 **Experience:**
-  - **Software Engineering Intern** @ **Jain Launchpad** (Jan 2026 – May 2026) — Incubation product development & agile sprints
-  - **Software Testing Intern** @ **TribeMe** (2025) — Regression testing & release validation for campus super-app
-  - **Web Development Intern** @ **RTsense** (4 Months) — Production-level bug resolution & dashboard UI performance
-- 🔭 **Currently focused on:** Advanced web architectures, Android MVVM systems, and Generative AI integration (Google Gemini)
-- 🚀 **What I'm Working Towards & Future Focus:**
-  - 🐳 **Docker + basic CI/CD** — Containerization, workflow automation & containerized deployments
-  - 🏛️ **System design fundamentals** — Scalable distributed architectures, caching & load balancing
-  - 🧩 **DSA / competitive programming** — Advanced algorithms, data structures & problem-solving
-- 🤝 **Open to:** Software Engineering internships, collaborative open-source builds, and technical discussions
+- 🎓 **Academic Circuit:** Pursuing **B.Tech in Computer Science Engineering** @ **Jain University, Bengaluru** (Expected 2028) · **Diploma in ICT** @ **Marwadi University** (CGPA: 8.42/10)
+- 💼 **Industry Track Record:**
+  - **Software Engineering Intern** @ **Jain Launchpad** (Jan 2026 – May 2026) — Incubation product development & agile sprint workflows
+  - **Software Testing Intern** @ **TribeMe** (2025) — Regression testing & production release validation for campus super-app
+  - **Web Development Intern** @ **RTsense** (4 Months) — Production-level bug resolution & dashboard UI performance optimization
+- 🔭 **Current Focus:** Scalable web platforms, Android MVVM architecture, and Generative AI integration (Google Gemini API)
+- 🤝 **Collaboration Vector:** Open to Software Engineering internships, high-impact open-source builds, and technical discussions
 
 <br/>
 
@@ -58,25 +54,18 @@ Currently focused on architecting scalable web platforms, high-performance mobil
 
 <div align="center">
 
-### 🌐 Connect with Me
+### 02. 🚀 FUTURE DEPLOYMENTS // ROADMAP
+
+*High-priority engineering milestones and architectures currently compiling on my horizon:*
 
 <br/>
 
-<a href="https://www.linkedin.com/in/monil-patel-946845255/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-Monil--Patel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-</a>
-&nbsp;&nbsp;
-<a href="mailto:monilpatel154@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/Email-monilpatel154%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
-&nbsp;&nbsp;
-<a href="https://www.instagram.com/monil_154?igsi=MWt6b3U4c3RrMHppbA%3D%3D&utm_source=qr" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-monil__154-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-</a>
-&nbsp;&nbsp;
-<a href="https://maps.google.com/?q=Bengaluru,India" target="_blank">
-  <img src="https://img.shields.io/badge/Location-Bengaluru%2C%20India-238636?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Location" />
-</a>
+| Icon | Core Domain | Focus Areas & Milestones | Pipeline Status |
+| :---: | :--- | :--- | :---: |
+| 🐳 | **Containerization & Deployment** | **Docker + basic CI/CD** — Dockerfile optimization, multi-stage builds, automated GitHub Actions pipelines | ![In Progress](https://img.shields.io/badge/Status-In_Progress-39D353?style=flat-square) |
+| 🏛️ | **Distributed Architectures** | **System Design Fundamentals** — High-level architecture, load balancing, caching (Redis), and microservice patterns | ![Planned](https://img.shields.io/badge/Status-Planned-58A6FF?style=flat-square) |
+| 🧩 | **Algorithmic Mastery** | **DSA & Competitive Programming** — Advanced trees/graphs, dynamic programming, space-time complexity optimization | ![Active](https://img.shields.io/badge/Status-Daily_Sprint-F7DF1E?style=flat-square&logoColor=black) |
+| ☁️ | **Cloud & Edge AI** | **On-Device Inference & APIs** — Edge deployment with MediaPipe, MQTT streaming, and Gemini API pipelines | ![Exploring](https://img.shields.io/badge/Status-Exploring-BC8CFF?style=flat-square) |
 
 </div>
 
@@ -89,12 +78,12 @@ Currently focused on architecting scalable web platforms, high-performance mobil
 
 <div align="center">
 
-### 🛠️ Tech Stack
+### 03. ⚙️ PRODUCTION ARSENAL // TECH STACK
 
 <br/>
 
 <!-- Languages -->
-<p><strong>Languages</strong></p>
+<p><strong>Core Languages</strong></p>
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 &nbsp;
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -110,7 +99,7 @@ Currently focused on architecting scalable web platforms, high-performance mobil
 <br/><br/>
 
 <!-- Frontend & Web -->
-<p><strong>Frontend & Web</strong></p>
+<p><strong>Frontend & Web Systems</strong></p>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
 &nbsp;
 <img src="https://img.shields.io/badge/Next.js%2014-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
@@ -156,7 +145,7 @@ Currently focused on architecting scalable web platforms, high-performance mobil
 <br/><br/>
 
 <!-- Tools & AI -->
-<p><strong>Tools & AI</strong></p>
+<p><strong>Tools & Intelligence</strong></p>
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
 &nbsp;
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
@@ -178,7 +167,38 @@ Currently focused on architecting scalable web platforms, high-performance mobil
 
 <div align="center">
 
-### 📊 GitHub Stats
+### 04. 📡 SATELLITE UPLINK // TRANSMISSION
+
+<br/>
+
+<a href="https://www.linkedin.com/in/monil-patel-946845255/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-Monil--Patel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+&nbsp;&nbsp;
+<a href="mailto:monilpatel154@gmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Email-monilpatel154%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+</a>
+&nbsp;&nbsp;
+<a href="https://www.instagram.com/monil_154?igsi=MWt6b3U4c3RrMHppbA%3D%3D&utm_source=qr" target="_blank">
+  <img src="https://img.shields.io/badge/Instagram-monil__154-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+</a>
+&nbsp;&nbsp;
+<a href="https://maps.google.com/?q=Bengaluru,India" target="_blank">
+  <img src="https://img.shields.io/badge/Location-Bengaluru%2C%20India-238636?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Location" />
+</a>
+
+</div>
+
+<br/>
+
+<!-- Animated Gradient Divider -->
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+### 05. 📈 TELEMETRY // GIT PULSE
 
 <br/>
 
