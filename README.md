@@ -250,11 +250,6 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
   <img src="https://streak-stats.demolab.com/?user=Patel154&theme=dark&background=0D1117&border=30363D&stroke=39D353&ring=39D353&fire=39D353&currStreakLabel=39D353&sideLabels=8B949E&dates=8B949E" alt="Monil's GitHub Streak" width="80%" />
 </a>
 
-<br/><br/>
-
-<!-- GitHub Trophies -->
-<img src="https://github-profile-trophy.vercel.app/?username=Patel154&theme=darkhub&no-frame=true&no-bg=true&row=1&column=6&margin-w=8" alt="Monil's GitHub Trophies" width="90%" />
-
 </div>
 
 <br/>
