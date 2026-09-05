@@ -1,6 +1,6 @@
 <!-- ================================================================= -->
 <!-- MONIL PATEL — GITHUB PROFILE README                               -->
-<!-- Repository: Monilpatel154/Monilpatel154                           -->
+<!-- Repository: Patel154/Patel154                           -->
 <!-- ================================================================= -->
 
 <div align="center">
@@ -11,7 +11,7 @@
   <br/><br/>
 
   <!-- 2. Dynamic Typing SVG Header -->
-  <a href="https://github.com/Monilpatel154">
+  <a href="https://github.com/Patel154">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&duration=2600&pause=1000&color=39D353&center=true&vCenter=true&width=550&lines=Hi+%F0%9F%91%8B%2C+I'm+Monil+Patel;Software+Engineer;Full-Stack+%26+Android+Dev;AI+%26+Distributed+IoT+Builder" alt="Hi, I'm Monil Patel" />
   </a>
 
@@ -30,8 +30,6 @@
 
 ### 01. 🧠 THE ARCHITECTURE // WHOAMI
 
-</div>
-
 I'm a full-stack developer and Computer Science Engineering student passionate about turning complex ideas into scalable, production-ready software.
 I work across JavaScript, TypeScript, Python, Kotlin, React, Next.js, Android MVVM, and modern cloud technologies.
 Currently focused on architecting resilient web platforms, high-performance mobile apps, and edge IoT systems.
@@ -43,6 +41,8 @@ Currently focused on architecting resilient web platforms, high-performance mobi
   - **Web Development Intern** @ **RTsense** (4 Months) — Production-level bug resolution & dashboard UI performance optimization
 - 🔭 **Current Focus:** Scalable web platforms, Android MVVM architecture, and Generative AI integration (Google Gemini API)
 - 🤝 **Collaboration Vector:** Open to Software Engineering internships, high-impact open-source builds, and technical discussions
+
+</div>
 
 <br/>
 
@@ -240,14 +240,14 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 <br/>
 
 <!-- GitHub Stats + Top Languages -->
-<img src="https://github-stats-extended.vercel.app/api?username=Monilpatel154&show_icons=true&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&icon_color=39D353&text_color=8B949E&hide_border=false" alt="Monil's GitHub Stats" width="48%" />
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Monilpatel154&layout=compact&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&text_color=8B949E&hide_border=false" alt="Top Languages" width="38%" />
+<img src="https://github-stats-extended.vercel.app/api?username=Patel154&show_icons=true&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&icon_color=39D353&text_color=8B949E&hide_border=false" alt="Monil's GitHub Stats" width="48%" />
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Patel154&layout=compact&theme=dark&bg_color=0D1117&border_color=21262D&title_color=39D353&text_color=8B949E&hide_border=false" alt="Top Languages" width="38%" />
 
 <br/><br/>
 
 <!-- GitHub Streak Stats -->
-<a href="https://github.com/Monilpatel154">
-  <img src="https://streak-stats.demolab.com/?user=Monilpatel154&theme=dark&background=0D1117&border=30363D&stroke=39D353&ring=39D353&fire=39D353&currStreakLabel=39D353&sideLabels=8B949E&dates=8B949E" alt="Monil's GitHub Streak" width="80%" />
+<a href="https://github.com/Patel154">
+  <img src="https://streak-stats.demolab.com/?user=Patel154&theme=dark&background=0D1117&border=30363D&stroke=39D353&ring=39D353&fire=39D353&currStreakLabel=39D353&sideLabels=8B949E&dates=8B949E" alt="Monil's GitHub Streak" width="80%" />
 </a>
 
 </div>
@@ -267,6 +267,6 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 </p>
 
 <!-- Profile Views Counter -->
-<img src="https://komarev.com/ghpvc/?username=Monilpatel154&style=flat-square&color=39d353&label=PROFILE+VIEWS" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=Patel154&style=flat-square&color=39d353&label=PROFILE+VIEWS" alt="Profile Views" />
 
 </div>
