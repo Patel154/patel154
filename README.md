@@ -22,7 +22,7 @@
 </div>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -47,7 +47,7 @@ Currently focused on architecting resilient web platforms, high-performance mobi
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -85,7 +85,7 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -109,7 +109,7 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -198,7 +198,7 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -229,7 +229,7 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
@@ -250,12 +250,17 @@ Explainable AI pipeline for grading DR severity in rural India — a MATLAB-base
   <img src="https://streak-stats.demolab.com/?user=Patel154&theme=dark&background=0D1117&border=30363D&stroke=39D353&ring=39D353&fire=39D353&currStreakLabel=39D353&sideLabels=8B949E&dates=8B949E" alt="Monil's GitHub Streak" width="80%" />
 </a>
 
+<br/><br/>
+
+<!-- GitHub Trophies -->
+<img src="https://github-profile-trophy.vercel.app/?username=Patel154&theme=darkhub&no-frame=true&no-bg=true&row=1&column=6&margin-w=8" alt="Monil's GitHub Trophies" width="90%" />
+
 </div>
 
 <br/>
 
 <!-- Animated Gradient Divider -->
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" alt="divider"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:1F6FEB,100:39D353&height=3&width=1200" width="100%" alt="divider"/>
 
 <br/>
 
